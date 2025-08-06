@@ -1,0 +1,48 @@
+---
+import Layout from '../../layouts/Layout.astro';
+---
+
+<Layout title="Consulta Nutricional Avulsa | Carolina Macedo Nutrição">
+  <main class="servico-detalhe-page">
+    <h1>Consulta Nutricional Avulsa</h1>
+    
+    <div class="servico-content">
+      <section>
+        <h2>Valor</h2>
+        <p>R$ 350,00</p> <!-- PREENCHA O VALOR AQUI -->
+      </section>
+      
+      <section>
+        <h2>Formas de Pagamento</h2>
+        <p>O pagamento é feito no dia, com opções facilitadas (incluindo parcelamento no cartão mediante taxa)</p> <!-- AJUSTE AS FORMAS DE PAGAMENTO -->
+      </section>
+      
+      <section>
+        <h2>Informações Adicionais</h2>
+        <p>
+         Todos os atendimentos são realizados exclusivamente no formato online;<br> 
+         No mês do atendimento estarei a disposição para esclarecer dúvidas e adaptar o plano, se necessário;<br> 
+         Separe exames recentes (até 6 meses) para uma melhor avaliação;</br>
+        </p> <!-- COLOQUE MAIS DETALHES AQUI -->
+      </section>
+
+      <div class="agendamento-container">
+        {/* Este botão leva para a página de agendamento que você já tem */}
+        <a href="/agendamento" class="btn">Agendar Consulta</a>
+        <p class="info-agendamento">Escolha você mesmo a melhor data e horário.</p>
+      </div>
+    </div>
+  </main>
+</Layout>
+
+<style>
+  .servico-detalhe-page { max-width: 800px; margin: 0 auto; padding: 40px 20px; }
+  .servico-detalhe-page h1 { text-align: center; font-size: 2.8em; color: var(--cor-principal); margin-bottom: 50px; }
+  .servico-content section { margin-bottom: 35px; }
+  .servico-content h2 { font-size: 1.8em; color: var(--cor-principal); margin-bottom: 10px; border-bottom: 2px solid var(--cor-secundaria); padding-bottom: 5px; }
+  .servico-content p { font-size: 1.1em; line-height: 1.7; color: var(--cor-texto); }
+  .agendamento-container { text-align: center; margin-top: 50px; }
+  .info-agendamento { margin-top: 10px; font-size: 0.9em; color: #555; }
+  .btn { display: inline-block; background-color: var(--cor-principal); color: var(--cor-branca); padding: 15px 35px; border-radius: 5px; text-decoration: none; font-weight: bold; font-size: 1.1em; transition: background-color 0.3s ease, transform 0.2s ease; }
+  .btn:hover { background-color: var(--cor-secundaria); transform: translateY(-2px); }
+</style>

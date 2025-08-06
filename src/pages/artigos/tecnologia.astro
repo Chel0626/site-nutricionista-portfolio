@@ -1,0 +1,98 @@
+---
+// PASSO 1: Importar os componentes e funções necessárias
+import Layout from '@/layouts/Layout.astro';
+import ArticleCard from '@/components/ArticleCard.astro';
+import { getCollection } from 'astro:content';
+
+// PASSO 2: Buscar apenas os artigos da categoria 'tecnologia'
+const artigosDeTecnologia = await getCollection('artigos', ({ data }) => {
+  return data.category === 'tecnologia';
+});
+---
+
+<Layout title="Artigos sobre Tecnologia em Diabetes | Carolina Macedo">
+  <main class="container page-artigos">
+    
+    <h1>Tecnologia em Diabetes</h1>
+
+    <div class="conteudo-principal">
+      <p>Estamos vivendo um momento em que as medicações e dispositivos para o tratamento do diabetes avançam de forma impressionante, proporcionando maior controle e conforto.</p>
+      <p>Os sensores de glicemia, por exemplo, estão cada vez menores, com transmissores integrados e versões implantáveis de longa durabilidade. Além disso, há a promessa de dispositivos não invasivos e altamente confiáveis, que podem revolucionar o monitoramento a longo prazo.</p>
+      <p>A administração de insulina também evoluiu consideravelmente. Há algumas décadas, seringas de vidro reutilizáveis e agulhas que precisavam ser afiadas eram a realidade (socorro!). Hoje, elas foram substituídas por seringas descartáveis mais precisas, canetas de insulina modernas e, mais recentemente, por canetas inteligentes ou adaptadores conectados a aplicativos. Esses sistemas sugerem doses personalizadas, considerando fatores como a insulina ativa no organismo e, em alguns casos, dados de sensores de glicemia.</p>
+      <p>As bombas de insulina também seguem avançando. Modelos menores e sem cânulas e muitas vezes integrados a sensores de glicemia. Alguns protótipos prometem incluir Glucagon, um hormônio que tem o efeito oposto ao da insulina, possibilitando a prevenção e o tratamento de hipoglicemias sem a necessidade de consumir carboidratos.</p>
+      <p>Já temos, também, sistemas de pâncreas artificial híbrido que automatizam grande parte do tratamento, com a promessa de futuras versões que dispensarão até mesmo o anúncio de carboidratos das refeições. As atualizações para esses dispositivos, além disso, estão se tornando acessíveis com mais rapidez aos usuários.</p>
+      <p>Outra área promissora é o uso de softwares com inteligência artificial, que buscam melhorar a adesão ao tratamento. Um exemplo são aplicativos que estimam a quantidade de carboidratos em uma refeição apenas analisando uma foto, facilitando o planejamento e o controle glicêmico.</p>
+      <p>É emocionante ver tanto engajamento, inclusive de pessoas com diabetes e seus familiares, que se dedicam a buscar soluções para automatizar o tratamento. Esses avanços não apenas melhoram a qualidade de vida, mas também trazem mais autonomia e esperança para quem convive com o diabetes.</p>
+      <div class="assinatura">
+        Carolina de Souza Silva Macedo
+      </div>
+      Nutricionista e Educadora em Diabetes
+      <br>
+      CRN 29096
+    </div>
+    
+    <h1 style="margin-top: 4rem;">Artigos sobre Tecnologia em Diabetes</h1>
+
+    <div class="artigos-grid">
+      {artigosDeTecnologia.map(artigo => (
+        <ArticleCard artigo={artigo} />
+      ))}
+    </div>
+  </main>
+</Layout>
+
+<style>
+  .page-artigos {
+    padding: 4rem 0;
+  }
+
+  /* Esta regra agora se aplica a AMBOS os títulos */
+  .page-artigos h1 {
+    font-family: 'Allura', cursive;
+    font-size: 3.5rem;
+    text-align: center;
+    color: var(--cor-principal);
+    margin-bottom: 3rem;
+  }
+
+  .conteudo-principal {
+    max-width: 800px; /* Limita a largura do texto para melhor leitura */
+    margin: 0 auto 3rem auto; /* Centraliza o bloco de texto */
+    text-align: justify;
+    line-height: 1.8;
+  }
+
+  .assinatura {
+    font-weight: bold;
+    margin-top: 2rem;
+  }
+
+  .artigos-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+  }
+
+  /* --- Responsividade para Telas Menores --- */
+  @media (max-width: 992px) {
+    .artigos-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (max-width: 768px) {
+    .artigos-grid {
+      grid-template-columns: 1fr;
+    }
+    .page-artigos h1 {
+      font-size: 2.8rem; /* Ajusta o tamanho do título para telas menores */
+    }
+  }
+
+  .container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+  }
+</style>

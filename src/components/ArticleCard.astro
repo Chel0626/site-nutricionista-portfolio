@@ -1,0 +1,48 @@
+---
+// Este componente recebe um 'artigo' como propriedade
+const { artigo } = Astro.props;
+---
+<a href={`/artigos/${artigo.slug}`} class="card-artigo">
+  <img src={artigo.data.image} alt={`Capa do artigo ${artigo.data.title}`} />
+  <div class="card-content">
+    <h3>{artigo.data.title}</h3>
+    <span>Leia o artigo &gt;</span>
+  </div>
+</a>
+
+<style>
+  .card-artigo {
+    display: block;
+    text-decoration: none;
+    color: inherit;
+    background-color: var(--cor-branca);
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+    transition: all 0.3s ease;
+  }
+  .card-artigo:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+  }
+  .card-artigo img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+  }
+  .card-artigo .card-content {
+    padding: 20px;
+  }
+  .card-artigo h3 {
+    margin: 0 0 10px 0;
+    font-size: 1.4em;
+    color: var(--cor-principal);
+    /* Garante que o texto não quebre o layout */
+    min-height: 58px; 
+  }
+  .card-artigo span {
+    color: var(--cor-texto);
+    font-weight: bold;
+    opacity: 0.8;
+  }
+</style>

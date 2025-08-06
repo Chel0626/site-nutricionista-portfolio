@@ -1,0 +1,40 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="Agendamento | Carolina Macedo Nutrição">
+  <main class="agendamento-page">
+    <h1>Agende sua Consulta</h1>
+    <p class="subtitulo">
+      Escolha o melhor horário para você. O pagamento é realizado de forma segura
+      e o link para a videochamada será enviado por e-mail após a confirmação.
+    </p>
+
+    <div class="calendly-inline-widget" data-url="https://calendly.com/carolinamacedo-nutri/30min" style="min-width:320px;height:700px;">
+    </div>
+
+  </main>
+</Layout>
+
+<script is:inline type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
+
+<style>
+  .agendamento-page h1, .subtitulo {
+    text-align: center;
+  }
+
+  .agendamento-page h1 {
+    font-size: 2.8em;
+    color: #174441;
+    margin-bottom: 10px;
+  }
+
+  .subtitulo {
+    font-size: 1.2em;
+    color: #555;
+    margin-bottom: 50px;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+</style>

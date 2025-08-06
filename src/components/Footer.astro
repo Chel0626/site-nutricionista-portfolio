@@ -1,0 +1,61 @@
+---
+// Pega o ano atual automaticamente para o aviso de direitos autorais
+const anoAtual = new Date().getFullYear(); 
+---
+
+<footer>
+  <div class="container">
+    <div class="info-copyright">
+      <p>&copy; {anoAtual} Carolina Macedo Nutrição. Todos os direitos reservados.</p>
+    </div>
+    <div class="social-links">
+      <a href="mailto:contato@carolinaminhanutri.com" aria-label="E-mail">
+        <i class="fas fa-envelope"></i>
+      </a>
+      <a href="https://www.instagram.com/carolina.minha.nutri/" target="_blank" aria-label="Instagram">
+        <i class="fab fa-instagram"></i>
+      </a>
+      </div>
+  </div>
+</footer>
+
+<style>
+  footer {
+    background-color: var(--cor-branca);
+    border-top: 1px solid #e0e0e0;
+    padding: 30px 0;
+    margin-top: 60px;
+    width: 100%;
+    color: var(--cor-texto);
+  }
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .info-copyright p {
+    margin: 0;
+    font-size: 0.9em;
+  }
+  .social-links a {
+    color: var(--cor-texto);
+    font-size: 1.5em;
+    margin-left: 20px;
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+  .social-links a:hover {
+    color: var(--cor-principal);
+  }
+  @media (max-width: 768px) {
+    .container {
+      flex-direction: column;
+    }
+    .info-copyright {
+      margin-bottom: 20px;
+    }
+  }
+</style>

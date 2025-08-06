@@ -1,0 +1,89 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="Artigos | Carolina Macedo Nutrição">
+  <main class="portal-artigos">
+    <h1>Artigos</h1>
+    <p class="subtitulo">Explore o conteúdo por categoria.</p>
+
+    <div class="categorias-grid">
+      <a href="/artigos/nutricao" class="card-categoria">
+        <div class="card-conteudo">
+          <h2>Nutrição</h2>
+          <p>Dicas, receitas e informações para uma alimentação saudável e equilibrada.</p>
+        </div>
+        <span class="card-footer">Ver Artigos &rarr;</span>
+      </a>
+
+      <a href="/artigos/tecnologia" class="card-categoria">
+        <div class="card-conteudo">
+          <h2>Tecnologia em Diabetes</h2>
+          <p>Análises e experiências com as ferramentas que facilitam o controle do diabetes.</p>
+        </div>
+        <span class="card-footer">Ver Artigos &rarr;</span>
+      </a>
+    </div>
+  </main>
+</Layout>
+
+<style>
+  .portal-artigos h1, .subtitulo {
+    text-align: center;
+  }
+  .portal-artigos h1 {
+    font-size: 2.8em;
+    color: var(--cor-principal);
+    margin-bottom: 10px;
+  }
+  .subtitulo {
+    font-size: 1.2em;
+    color: var(--cor-texto);
+    opacity: 0.8;
+    margin-bottom: 60px;
+  }
+  .categorias-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 40px;
+    max-width: 900px;
+    margin: 0 auto;
+  }
+  .card-categoria {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--cor-branca);
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+    text-decoration: none;
+    color: inherit;
+    overflow: hidden;
+    transition: all 0.3s ease;
+  }
+  .card-categoria:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+  }
+  .card-conteudo {
+    padding: 30px;
+    flex-grow: 1;
+  }
+  .card-conteudo h2 {
+    font-size: 1.8em;
+    color: var(--cor-principal);
+    margin: 0 0 15px 0;
+  }
+  .card-conteudo p {
+    font-size: 1.1em;
+    line-height: 1.7;
+    margin: 0;
+  }
+  .card-footer {
+    display: block;
+    padding: 15px 30px;
+    background-color: var(--cor-fundo-claro);
+    color: var(--cor-principal);
+    font-weight: bold;
+    text-align: right;
+  }
+</style>

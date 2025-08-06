@@ -1,0 +1,194 @@
+---
+// Nenhum script de servidor necessário aqui.
+---
+
+<header id="site-header">
+  <div class="container">
+    <div class="logo">
+      <a href="/">
+        <span>Carolina Macedo | Nutrição</span>
+      </a>
+    </div>
+    
+    <nav class="desktop-nav">
+      <ul>
+        <li><a href="/">Início</a></li>
+        <li><a href="/sobre">Sobre mim</a></li>
+        <li><a href="/formacao">Formação</a></li>
+        <li><a href="/nutricao">Consulta Nutricional</a></li>
+        <li><a href="/artigos">Artigos</a></li>
+        <li><a href="/contato">Contato</a></li>
+        <li><a href="/agendamento" class="nav-button">Agendar</a></li>
+      </ul>
+    </nav>
+
+    <button id="hamburger-button" aria-label="Abrir menu">
+      <span class="line"></span>
+      <span class="line"></span>
+      <span class="line"></span>
+    </button>
+  </div>
+</header>
+
+<div id="mobile-menu">
+  <nav>
+    <ul>
+      <li><a href="/">Início</a></li> 
+      <li><a href="/sobre">Sobre mim</a></li>
+      <li><a href="/formacao">Formação</a></li>
+      <li><a href="/nutricao">Consulta Nutricional</a></l>
+      <li><a href="/artigos">Artigos</a></li>
+      <li><a href="/contato">Contato</a></li>
+      <li><a href="/agendamento" class="nav-button">Agendar Consulta</a></li>
+    </ul>
+  </nav>
+</div>
+
+<script is:inline>
+  const hamburgerButton = document.getElementById('hamburger-button');
+  const mobileMenu = document.getElementById('mobile-menu');
+  
+  hamburgerButton.addEventListener('click', () => {
+    hamburgerButton.classList.toggle('active');
+    mobileMenu.classList.toggle('active');
+  });
+</script>
+
+<style>
+  header {
+    background-color: var(--cor-principal);
+    padding: 15px 0;
+    width: 100%;
+    position: sticky;
+    top: 0;
+    z-index: 1001;
+  }
+
+  .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+
+  .logo a {
+    text-decoration: none;
+    color: var(--cor-texto-claro);
+    font-weight: bold;
+    font-size: 1.5em;
+    line-height: 1.2;
+  }
+  
+  /* Menu de Desktop */
+  .desktop-nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    gap: 30px;
+  }
+
+  .desktop-nav ul li {
+    margin-left: 0;
+  }
+
+  .desktop-nav ul li a {
+    text-decoration: none;
+    color: var(--cor-texto-claro);
+    font-size: 17px;
+    font-weight: 400;
+    opacity: 0.9;
+    transition: opacity 0.3s ease;
+  }
+
+  .desktop-nav ul li a:hover {
+    opacity: 1;
+    color: var(--cor-branca);
+  }
+
+  /* Botão de Agendamento */
+  .nav-button {
+    background-color: var(--cor-destaque);
+    color: var(--cor-branca) !important;
+    padding: 8px 16px;
+    border-radius: 5px;
+    transition: all 0.3s;
+  }
+
+  .nav-button:hover {
+    filter: brightness(110%);
+  }
+  
+  /* Botão Hambúrguer e Menu Mobile */
+  #mobile-menu {
+    display: none;
+    position: fixed;
+    top: 81px; /* Altura do header */
+    left: 0;
+    width: 100%;
+    height: calc(100vh - 81px);
+    background-color: rgba(44, 74, 71, 0.98); /* Fundo verde escuro semi-transparente */
+    backdrop-filter: blur(5px);
+    z-index: 1000;
+  }
+
+  #mobile-menu.active {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  #mobile-menu nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  #mobile-menu nav ul li {
+    text-align: center;
+    margin: 25px 0;
+  }
+
+  #mobile-menu nav ul li a {
+    text-decoration: none;
+    color: var(--cor-branca);
+    font-size: 1.8em;
+    font-weight: 500;
+  }
+  
+  #mobile-menu .nav-button {
+    font-size: 1.2em !important;
+    padding: 12px 24px;
+  }
+  
+  #hamburger-button {
+    display: none;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    z-index: 1002;
+  }
+
+  #hamburger-button .line {
+    display: block;
+    width: 30px;
+    height: 3px;
+    margin: 5px 0;
+    background-color: var(--cor-texto-claro);
+    border-radius: 2px;
+    transition: all 0.3s ease-in-out;
+  }
+  
+  #hamburger-button.active .line:nth-child(1) { transform: rotate(45deg) translate(7px, 5px); }
+  #hamburger-button.active .line:nth-child(2) { opacity: 0; }
+  #hamburger-button.active .line:nth-child(3) { transform: rotate(-45deg) translate(7px, -5px); }
+  
+  @media (max-width: 992px) {
+    .desktop-nav { display: none; }
+    #hamburger-button { display: block; }
+  }
+</style>

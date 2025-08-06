@@ -1,0 +1,131 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const formacoes = [
+  { numero: 1, titulo: "Graduação", texto: "Graduada em Nutrição pelo Centro Universitário São Camilo, SP (2009);" },
+  { numero: 2, titulo: "Educadora em Diabetes", texto: "Qualificada pelo projeto Educando Educadores da ADJ, certificada pela Federação Internacional de Diabetes (2013);" },
+  { numero: 3, titulo: "Sanofi Aventis", texto: "Educadora em Diabetes na indústria farmacêutica - Sanofi Aventis (2010-2013);" },
+  { numero: 4, titulo: "Eli Lilly and Company", texto: "Nutricionista/Educadora em Diabetes (2013 - 2017);" },
+  { numero: 5, titulo: "Clínica Dr. José Francisco Kerr Saraiva", texto: "Trabalhando junto à Dra. Sylka Rodovalho, endocrinologista (2017-2023);" },
+  { numero: 6, titulo: "Libbs", texto: "Propagandista/Consultora médica - Linha cardio, endócrino e neuro (2017 - 2019);" },
+  { numero: 7, titulo: "Clínica Fávaro, Jundiaí", texto: "Trabalhando junto ao Dr. Hanna Fouad Saghie, endocrinologista (2019-2024);" },
+  { numero: 8, titulo: "Roche Diabetes Care", texto: "Certificada em Terapia de Infusão Contínua de Insulina pela Roche Diabetes Care (2022);" },
+  { numero: 9, titulo: "Clínica Dr. Walter J. Minicucci", texto: "Trabalhando junto ao Dr. Walter Minicucci, endocrinologista (2022 - 2025);" },
+]
+---
+
+<Layout title="Formação | Carolina Macedo Nutrição">
+  <div class="formacao-wrapper">
+    <div class="formacao-container">
+      <h1>Formação</h1>
+      <div class="divisor"></div>
+
+      <div class="formacao-grid">
+        {formacoes.map(item => (
+          <div class="card">
+            <div class="card-numero">{item.numero}</div>
+            <div class="card-conteudo">
+              <h3>{item.titulo}</h3>
+              <p>{item.texto}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </div>
+</Layout>
+
+<style>
+  .formacao-wrapper {
+    background-color: var(--cor-principal); /* Fundo verde escuro */
+    color: var(--cor-texto-claro); /* Texto claro para contraste */
+    padding: 60px 20px;
+    min-height: calc(100vh - 81px - 145px); /* Altura da tela menos header e footer */
+  }
+
+  .formacao-container {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  h1 {
+  font-family: 'Allura', cursive; /* <-- Adiciona a fonte correta */
+  font-size: 3.5rem;             /* <-- Ajusta para o tamanho padrão dos títulos */
+  text-align: center;
+  margin-bottom: 1rem;           /* <-- Reduz a margem para alinhar com o divisor */
+  /* Removemos font-weight e letter-spacing que não funcionam bem com fontes cursivas */
+  }
+
+  .divisor {
+    width: 60px;
+    height: 4px;
+    background-color: var(--cor-texto-claro);
+    opacity: 0.8;
+    margin: 0 auto 50px auto;
+  }
+
+  .formacao-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 colunas */
+    gap: 40px;
+  }
+
+  .card {
+    display: flex;
+    gap: 20px;
+    background-color: rgba(255, 255, 255, 0.08); /* Fundo levemente transparente */
+    padding: 20px;
+    border-radius: 8px;
+  }
+
+  .card-numero {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: var(--cor-texto-claro);
+    color: var(--cor-principal);
+    font-weight: bold;
+    font-size: 1.2em;
+  }
+
+  .card-conteudo h3 {
+    margin: 0 0 10px 0;
+    font-size: 1.4em;
+    font-weight: 600;
+  }
+
+  .card-conteudo p {
+    margin: 0;
+    line-height: 1.6;
+    opacity: 0.9;
+  }
+
+  /* Responsividade para telas menores */
+  @media (max-width: 992px) {
+    .formacao-grid {
+      grid-template-columns: repeat(2, 1fr); /* 2 colunas em tablets */
+    }
+  }
+
+  @media (max-width: 768px) {
+    .formacao-grid {
+      grid-template-columns: 1fr; /* 1 coluna em celulares */
+      gap: 30px;
+    }
+    h1 {
+      font-size: 2.2em;
+    }
+    .card {
+      flex-direction: column; /* Empilha número e conteúdo no celular */
+      align-items: center;
+      text-align: center;
+    }
+    .card-numero {
+      margin-bottom: 15px;
+    }
+  }
+</style>

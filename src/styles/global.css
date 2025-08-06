@@ -1,0 +1,22 @@
+:root {
+  --cor-principal: #2c4a47;     /* Verde Escuro (Mantido para o header) */
+  --cor-destaque: #c5a35a;      /* COR DO BOTÃO: Novo tom Dourado/Mostarda */
+  --cor-fundo: #ede9e1;         /* FUNDO: Bege/Areia visivelmente mais escuro */
+  --cor-secundaria: #829d9a;   /* Verde Médio (Mantido) */
+  --cor-texto: #333333;         /* Cinza Escuro (Mantido) */
+  --cor-texto-claro: #f0f0f0;   /* Branco Suave (Mantido) */
+  --cor-branca: #ffffff;         /* Branco (Mantido) */
+}
+
+/* Aplica a fonte Allura a todos os títulos H1 dentro do <main> de uma página */
+main h1 {
+  font-family: 'Allura', cursive;
+  font-weight: 400; /* Fontes cursivas geralmente não precisam de negrito */
+}
+
+/* Aplica a fonte Great Vibes a todas as assinaturas */
+.assinatura {
+  font-family: 'Great Vibes', cursive;
+  font-size: 1.8em; /* Um pouco maior para dar destaque */
+  font-weight: 400;
+}

@@ -1,0 +1,51 @@
+---
+import { getCollection } from 'astro:content';
+import Layout from '../../layouts/Layout.astro';
+
+export async function getStaticPaths() {
+  const artigos = await getCollection('artigos');
+  return artigos.map(artigo => ({
+    params: { slug: artigo.slug },
+    props: { artigo },
+  }));
+}
+
+const { artigo } = Astro.props;
+const { Content } = await artigo.render();
+---
+
+<Layout title={artigo.data.title}>
+  <main class="artigo-individual">
+    <h1>{artigo.data.title}</h1>
+    <article>
+      <Content />
+    </article>
+  </main>
+</Layout>
+
+<style>
+  .artigo-individual {
+    background-color: var(--cor-branca);
+    padding: 30px 40px;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+  }
+  .artigo-individual h1 {
+    font-size: 2.8em;
+    color: var(--cor-principal);
+    margin-bottom: 25px;
+    line-height: 1.2;
+  }
+  article {
+    font-size: 1.1em;
+    line-height: 1.8;
+  }
+  @media (max-width: 768px) {
+    .artigo-individual h1 {
+      font-size: 2.2em;
+    }
+    .artigo-individual {
+      padding: 20px;
+    }
+  }
+</style>

@@ -1,0 +1,137 @@
+---
+import { getCollection, type CollectionEntry } from 'astro:content';
+import Layout from '../../layouts/Layout.astro';
+import ArticleCard from '../../components/ArticleCard.astro';
+
+// Pega apenas os artigos da categoria 'nutricao'
+const artigosDeNutricao: CollectionEntry<'artigos'>[] = await getCollection('artigos', ({ data }) => {
+  return data.category === 'nutricao';
+});
+---
+
+<Layout title="Nutrição | Carolina Macedo Nutrição">
+  <main class="page-artigos">
+
+    <div class="container">
+      <div class="intro-texto">
+        <h1>Nutrição</h1>
+        <p>
+          Eu achava que a nutrição tinha sido uma escolha intuitiva e prática, justamente por conviver com o diabetes tipo 1 desde os 9 anos e desde então ter uma relação tão complicada com a comida. Hoje eu sei que Deus, dono do tempo e da nossa história, tinha planos grandiosos pra mim. A Nutrição está no meu autocuidado, no cuidado com a minha família e com os meus pacientes!
+        </p>
+        <div class="assinatura">
+          <span>Carolina de Souza Silva Macedo</span> 
+          Nutricionista e Educadora em Diabetes<br>
+          CRN 29096
+        </div>
+      </div>
+    </div>
+    <div class="container artigos-section">
+      <h1>Artigos sobre Nutrição</h1>
+      <div class="artigos-grid">
+        {artigosDeNutricao.map(artigo => (
+          <ArticleCard artigo={artigo} />
+        ))}
+      </div>
+    </div>
+
+  </main>
+</Layout>
+
+<style>
+  .page-artigos {
+    padding: 4rem 0;
+  }
+  
+  .page-artigos h1 {
+    font-family: 'Allura', cursive;
+    font-size: 3.5rem;
+    text-align: center;
+    color: var(--cor-principal);
+    margin-bottom: 3rem;
+  }
+
+  .container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+  }
+
+  /* --- Estilos para a Introdução Adicionada --- */
+  .intro-texto {
+    max-width: 800px; /* Limita a largura do texto de introdução */
+    margin: 0 auto 4rem auto; /* Centraliza o bloco de texto e adiciona espaço abaixo */
+  }
+
+  .intro-texto h1 {
+    font-family: 'Allura', cursive;
+    font-size: 3.5rem;
+    text-align: center;
+    color: var(--cor-principal);
+    margin-bottom: 2rem;
+  }
+
+  .intro-texto p {
+    font-size: 1.1rem;
+    line-height: 1.7;
+    text-align: center; /* Centraliza o parágrafo */
+    color: var(--cor-texto);
+    margin-bottom: 2rem;
+  }
+  
+  .assinatura {
+    text-align: left; /* Alinhamento à esquerda, como definimos */
+    margin-top: 2rem;
+    line-height: 1.4;
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.9em;
+    color: var(--cor-texto);
+    display: inline-block;
+  }
+
+  .assinatura span {
+    display: block;
+    font-family: 'Great Vibes'; cursive; /* Fonte especial para o nome */
+    font-size: 1.8em;
+    color: var(--cor-principal);
+    margin-bottom: 5px;
+    font-weight: 400;
+  }
+  
+  /* --- Estilos para a Grade de Artigos --- */
+  .artigos-section {
+    margin-top: 3rem; /* Espaço acima da seção de artigos */
+  }
+
+  .artigos-section h2 {
+    text-align: center;
+    font-size: 2.8em;
+    color: var(--cor-principal);
+    margin-bottom: 3rem;
+  }
+
+  .artigos-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+  }
+
+  /* --- Responsividade --- */
+  @media (max-width: 992px) {
+    .artigos-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (max-width: 768px) {
+    .artigos-grid {
+      grid-template-columns: 1fr;
+    }
+    .intro-texto h1 {
+        font-size: 2.8rem;
+    }
+    .artigos-section h2 {
+        font-size: 2.2rem;
+    }
+  }
+</style>

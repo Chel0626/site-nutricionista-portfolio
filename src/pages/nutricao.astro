@@ -1,0 +1,49 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="Nutrição | Carolina Macedo Nutrição">
+  
+    <div class="cards-container">
+      <div class="card">
+        <h2>Consulta Nutricional Avulsa</h2>
+        <p>
+          Plano alimentar personalizado, orientações práticas e avaliação 
+          completa — em uma única consulta, tudo que você precisa para 
+          começar a mudar sua alimentação com segurança.
+        </p>
+        {/* BOTÃO ATUALIZADO PARA A PÁGINA DE DETALHES */}
+        <a href="/servicos/consulta-avulsa" class="btn">Saiba mais</a>
+      </div>
+
+      <div class="card">
+        <h2>Acompanhamento Nutricional - Diabetes</h2>
+        <p>
+          O Acompanhamento Nutricional é ideal para quem busca 
+          um suporte mais próximo e contínuo. Inclui 3 consultas
+          online, com intervalos conforme sua necessidade, além 
+          de ajustes no plano alimentar e suporte para dúvidas ao
+          longo do processo. É uma forma mais completa e eficiente de
+          alcançar seus objetivos!
+        </p>
+        {/* BOTÃO ATUALIZADO PARA A PÁGINA DE DETALHES */}
+        <a href="/servicos/acompanhamento-nutricional" class="btn">Saiba mais</a>
+      </div>
+    </div>
+  </main>
+</Layout>
+
+<style>
+  /* Seus estilos existentes. Não precisa mudar nada aqui. */
+  .nutricao-page h1 { text-align: center; font-size: 2.8em; color: var(--cor-principal); margin-bottom: 40px; }
+  .intro-texto { text-align: center; max-width: 800px; margin: 0 auto 40px auto; font-size: 1.2em; line-height: 1.8; color: var(--cor-texto); }
+  .cards-container { display: flex; justify-content: center; gap: 30px; flex-wrap: wrap; }
+  .card { background-color: var(--cor-branca); border-radius: 8px; padding: 30px; box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08); display: flex; flex-direction: column; text-align: center; flex-basis: 400px; flex-grow: 1; }
+  .card h2 { font-size: 1.6em; color: var(--cor-principal); margin-top: 0; margin-bottom: 15px; }
+  .card p { flex-grow: 1; line-height: 1.7; margin-bottom: 25px; }
+  .btn { display: inline-block; background-color: var(--cor-principal); color: var(--cor-branca); padding: 12px 25px; border-radius: 5px; text-decoration: none; font-weight: bold; transition: background-color 0.3s ease, transform 0.2s ease; margin-top: auto; }
+  .btn:hover { background-color: var(--cor-secundaria); transform: translateY(-2px); }
+  .assinatura { text-align: left; margin-top: 30px; line-height: 1.4; font-family: 'Poppins', sans-serif; font-size: 0.9em; color: var(--cor-texto); display: block; }
+  .assinatura span { display: block; font-family: 'Great Vibes', cursive; font-size: 1.6em; color: var(--cor-principal); font-weight: normal; line-height: 1.2; margin-bottom: 10px; }
+  @media (max-width: 900px) { .card { flex-basis: 100%; } }
+</style>

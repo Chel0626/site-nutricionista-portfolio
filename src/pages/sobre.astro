@@ -1,0 +1,110 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="Sobre Mim | Carolina Macedo Nutrição">
+  <main>
+    <section class="sobre-mim">
+      <div class="imagem-container">
+        <img src="/foto-perfil.jpg" alt="Foto de perfil de Carolina Macedo">
+      </div>
+      <div class="texto-container">
+        <h1>Sobre Mim</h1>
+        
+        <p>Sou Carolina Macedo, esposa, mãe de dois meninos — Gael e Isaac — e profissional apaixonada pela nutrição e educação em diabetes.</p>
+
+        <p>Atuando na Nutrição Clínica desde a minha formação, há 16 anos. Também convivo com diabetes tipo 1 desde 1996, quando tinha apenas 9 anos. Essa vivência me inspirou a dedicar minha carreira ao cuidado de pessoas com diabetes, ajudando-as a superar desafios e conquistar autonomia no tratamento. Durante minha trajetória, ofereci suporte técnico e emocional a pacientes recém-diagnosticados, aprendendo e compartilhando conhecimentos valiosos.</p>
+        
+        <p>Atualmente, trabalho para atender às mais diversas necessidades dos meus pacientes, como:</p>
+        
+        <ul class="lista-servicos">
+          <li>Introdução ao tratamento no recém-diagnóstico;</li>
+          <li>Orientação para desempenho em exercícios físicos;</li>
+          <li>Melhoria da composição corporal;</li>
+          <li>Acompanhamento durante a gestação;</li>
+          <li>Educação nutricional;</li>
+          <li>Suporte no uso de novas tecnologias.</li>
+        </ul>
+
+        <p>Meu propósito é capacitá-lo a conduzir seu tratamento de forma eficiente, indo além do controle glicêmico para alcançar uma melhor qualidade de vida.</p>
+
+        <div class="assinatura">
+        Carolina de Souza Silva Macedo
+        </div>
+        Nutricionista e Educadora em Diabetes
+        <br>
+        CRN 29096</div>
+        </div>
+    </section>
+  </main>
+</Layout>
+
+<style>
+  .sobre-mim {
+    display: flex;
+    align-items: center;
+    gap: 50px; /* Espaço entre a foto e o texto */
+  }
+
+  .imagem-container {
+    flex-basis: 35%; /* A foto ocupará 35% da largura */
+    flex-shrink: 0;
+  }
+
+  .imagem-container img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px; /* Bordas arredondadas para a foto */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  }
+
+  .texto-container {
+    flex-basis: 65%; /* O texto ocupará 65% da largura */
+  }
+
+  .texto-container h1 {
+    font-size: 2.8em;
+    color: #174441;
+    margin-top: 0;
+    margin-bottom: 20px;
+  }
+
+  .texto-container p {
+    font-size: 1.1em;
+    line-height: 1.7;
+    color: #333;
+    margin-bottom: 15px;
+  }
+
+  .lista-servicos {
+    list-style: none;
+    padding-left: 0;
+    margin: 20px 0;
+  }
+  .lista-servicos li {
+    padding-left: 25px;
+    position: relative;
+    margin-bottom: 10px;
+  }
+  .lista-servicos li::before {
+    content: '✓';
+    color: var(--cor-principal);
+    font-weight: bold;
+    position: absolute;
+    left: 0;
+  }
+  .assinatura {
+    margin-top: 30px;
+    line-height: 1.4;
+  }
+  .assinatura p {
+    margin: 0;
+  }
+  /* Ajustes para telas menores (celulares) */
+  @media (max-width: 768px) {
+    .sobre-mim {
+      flex-direction: column; /* Coloca a foto em cima do texto */
+      gap: 30px;
+    }
+  }
+</style>
