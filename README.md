@@ -1,47 +1,48 @@
-# Astro Starter Kit: Minimal
+# Carolina Macedo | Site Institucional para Nutricionista
 
-```sh
-npm create astro@latest -- --template minimal
+![Screenshot da Home do Projeto](/public/screenshots/home.png)
+
+> **Link para o site ao vivo:** [https://www.carolinaminhanutri.com](https://www.carolinaminhanutri.com)
+
+## 📄 Sobre o Projeto
+
+Este é o site institucional e portfólio profissional para a nutricionista Carolina Macedo, especialista em nutrição e educação em diabetes. O objetivo do projeto foi criar uma presença online profissional, moderna e acolhedora, que transmitisse seus valores e facilitasse o contato e agendamento de consultas por novos pacientes.
+
+O site foi construído do zero, com foco em um design limpo, responsivo e de alta performance.
+
+## ✨ Principais Funcionalidades
+
+* **Design Totalmente Responsivo:** Perfeita visualização em desktops, tablets e todos os modelos de celulares, incluindo telas pequenas como a do iPhone SE.
+* **Performance Otimizada:** Construído com Astro para um carregamento quase instantâneo, garantindo uma excelente experiência para o usuário e bom posicionamento no Google.
+* **Integração com Ferramentas Externas:** Agendamento de consultas integrado diretamente com o Calendly e botão de contato rápido via WhatsApp.
+* **Estrutura de Blog/Artigos:** Seção de artigos dinâmicos para compartilhamento de conteúdo, gerenciados via arquivos Markdown.
+
+## 🚀 Tecnologias Utilizadas
+
+Este projeto foi construído utilizando as seguintes tecnologias:
+
+* **Framework:** [Astro](https://astro.build/)
+* **Linguagens:** HTML, CSS, JavaScript
+* **Hospedagem e Deploy:** [Netlify](https://www.netlify.com/)
+* **Controle de Versão:** Git e GitHub
+* **Ferramentas de Agendamento:** [Calendly](https://calendly.com/)
+
+## ⚙️ Como Executar o Projeto Localmente
+
+```bash
+# 1. Clone o repositório
+git clone [https://github.com/seu-usuario/nome-do-repositorio.git](https://github.com/seu-usuario/nome-do-repositorio.git)
+
+# 2. Entre na pasta do projeto
+cd nome-do-repositorio
+
+# 3. Instale as dependências
+npm install
+
+# 4. Inicie o servidor de desenvolvimento
+npm run dev
 ```
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/minimal)
-[![Open with CodeSandbox](https://assets.codesandbox.io/github/button-edit-lime.svg)](https://codesandbox.io/p/sandbox/github/withastro/astro/tree/latest/examples/minimal)
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/withastro/astro?devcontainer_path=.devcontainer/minimal/devcontainer.json)
+## 👏 Agradecimentos
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
-
-## 🚀 Project Structure
-
-Inside of your Astro project, you'll see the following folders and files:
-
-```text
-/
-├── public/
-├── src/
-│   └── pages/
-│       └── index.astro
-└── package.json
-```
-
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
-
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
-
-Any static assets, like images, can be placed in the `public/` directory.
-
-## 🧞 Commands
-
-All commands are run from the root of the project, from a terminal:
-
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
-
-## 👀 Want to learn more?
-
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+Agradecimento especial à nutricionista Carolina Macedo pela confiança e colaboração durante todo o processo.
