@@ -6,7 +6,7 @@ import Layout from '../layouts/Layout.astro';
   <main class="contato-page">
     <h1>Entre em Contato</h1>
     <p class="subtitulo">
-     Tem dúvidas? Vamos conversar! Envie sua mensagem ou dúvidas. Terei o maior prazer em ajudar
+      Tem dúvidas? Vamos conversar! Envie sua mensagem ou dúvidas. Terei o maior prazer em ajudar
     </p>
 
     <div class="contato-container">
@@ -104,19 +104,27 @@ import Layout from '../layouts/Layout.astro';
     display: flex;
     align-items: center;
     margin-bottom: 20px;
+    /* Ajuste para evitar que o conteúdo ultrapasse */
+    word-break: break-all;
   }
   .info-item i {
     font-size: 1.5em;
     color: var(--cor-principal);
     width: 40px;
+    /* Adicionado para garantir espaço fixo */
+    flex-shrink: 0;
   }
   .info-item a {
     font-size: 1.1em;
     color: var(--cor-texto);
     text-decoration: none;
+    /* Permite que o texto quebre a linha */
+    overflow-wrap: break-word;
   }
   .info-item a:hover { text-decoration: underline; }
   @media (max-width: 768px) {
     .contato-container { flex-direction: column; }
+    /* Ajuste de largura para telas menores */
+    .form-container, .info-container { flex-basis: 100%; }
   }
 </style>
